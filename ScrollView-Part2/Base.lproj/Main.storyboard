@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <scenes>
+        <!--Scrolling View Controller-->
+        <scene sceneID="Uy9-Qw-lIH">
+            <objects>
+                <viewController id="SGn-0W-Tlj" customClass="ScrollingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nNC-C8-Lxc"/>
+                        <viewControllerLayoutGuide type="bottom" id="udX-C9-DVT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bcz-aQ-jwd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="xEK-ja-gSw">
+                                <rect key="frame" x="281" y="563" width="39" height="37"/>
+                            </pageControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HYW-hE-ocr">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="SGn-0W-Tlj" id="uZR-iK-X3D"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="HYW-hE-ocr" secondAttribute="trailing" id="668-KQ-LGf"/>
+                            <constraint firstItem="udX-C9-DVT" firstAttribute="top" secondItem="xEK-ja-gSw" secondAttribute="bottom" id="G1a-15-zTQ"/>
+                            <constraint firstAttribute="centerX" secondItem="xEK-ja-gSw" secondAttribute="centerX" id="NWs-dE-5fG"/>
+                            <constraint firstItem="HYW-hE-ocr" firstAttribute="top" secondItem="bcz-aQ-jwd" secondAttribute="top" id="Pdj-dh-6Zd"/>
+                            <constraint firstItem="HYW-hE-ocr" firstAttribute="leading" secondItem="bcz-aQ-jwd" secondAttribute="leading" id="c1F-Bu-an6"/>
+                            <constraint firstAttribute="bottom" secondItem="HYW-hE-ocr" secondAttribute="bottom" id="vse-Hg-xfe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="xEK-ja-gSw" id="42Q-Bi-2o4"/>
+                        <outlet property="scrollView" destination="HYW-hE-ocr" id="60a-PB-dEG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HMt-Ha-mN2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-722" y="-36"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Co-tD-9Ra"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nbc-FV-zFQ"/>
+                    </layoutGuides>
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="IaD-0F-WdQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lighthouse-in-Field" translatesAutoresizingMaskIntoConstraints="NO" id="OcA-NJ-cHJ">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="OcA-NJ-cHJ" secondAttribute="trailing" id="8P1-I3-huX"/>
+                            <constraint firstAttribute="bottom" secondItem="OcA-NJ-cHJ" secondAttribute="bottom" id="JrZ-ZR-5RK"/>
+                            <constraint firstItem="OcA-NJ-cHJ" firstAttribute="top" secondItem="IaD-0F-WdQ" secondAttribute="top" id="Qgo-ci-hb6"/>
+                            <constraint firstItem="OcA-NJ-cHJ" firstAttribute="leading" secondItem="IaD-0F-WdQ" secondAttribute="leading" id="ThC-WM-r9K"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="delegate" destination="vXZ-lx-hvc" id="F1G-wV-tQV"/>
+                        </connections>
+                    </scrollView>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Lighthouse-in-Field" width="1920" height="1080"/>
+    </resources>
+</document>
